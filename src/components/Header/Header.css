@@ -16,6 +16,7 @@
 
 .container {
     height: inherit;
+    background-color: var(--second-color);
 }
 
 @media (max-width: 768px) {

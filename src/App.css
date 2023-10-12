@@ -3,9 +3,10 @@
 @import './components/Card/Card.css';
 
 :root {
-  --main-color: #c4c4c4;
-  --hover-color: #212121;
+  --main-color: #3726a6; 
   --accent-color: #f25c05;
+  --hover-color: #eea77d;
+  --second-color: #dfdfdf;
 }
 
 /* General */

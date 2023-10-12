@@ -1,3 +1,4 @@
+import { Button } from '../Button/Button';
 import './Card.css';
 import React from 'react';
 
@@ -23,6 +24,7 @@ export const Card = ({ greetData }) => {
                     <h2 dangerouslySetInnerHTML={{ __html: name }} />
                     <p dangerouslySetInnerHTML={{ __html: short_description }} />
                 </div>
+                <Button />
             </div>
         </div>
     );

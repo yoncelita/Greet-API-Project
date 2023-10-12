@@ -1,7 +1,7 @@
 .card-container {
   width: 280px;
   height: fit-content;
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--second-color);
   position: relative;
 }
 
@@ -13,7 +13,7 @@
   padding: 5px;
   position: absolute;
   width: 100%;
-  background-color: var(--accent-color);
+  background-color: var(--main-color);
 }
 
 .card-heading h3 {
@@ -48,17 +48,6 @@
   margin-top: 15px;
   font-size: 16px;
   font-weight: 400;
-}
-
-.card-container a {
-  outline: none;
-  box-shadow: none;
-  text-decoration: none;
-  padding: 8px 15px;
-  margin-right: 15px;
-  width: fit-content;
-  display: inline-block;
-  font-weight: bold;
 }
 
 @media (max-width: 768px) {
