@@ -1,9 +1,10 @@
-/* Import styles for individual components */
 @import './components/Header/Header.css';
 @import './components/Card/Card.css';
+@import './components/Button/Button.css';
+@import './components/InfiniteScroll/InfiniteScroll.css';
 
 :root {
-  --main-color: #3726a6; 
+  --main-color: #3726a6;
   --accent-color: #f25c05;
   --hover-color: #eea77d;
   --second-color: #dfdfdf;

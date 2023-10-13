@@ -1,5 +1,7 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import './InfiniteScroll.css';
+
 
 export const CustomInfiniteScroll = ({ data, fetchData, hasMore, children, loaderText }) => {
     return (

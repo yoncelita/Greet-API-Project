@@ -5,10 +5,8 @@ import React from 'react';
 export const Card = ({ greetData }) => {
     const { name, images, short_description, categories } = greetData;
 
-    // Get the first image URL
     const imageUrl = images.length > 0 ? images[0].src : '';
 
-    // Get the first category name
     const categoryName = categories.length > 0 ? categories[0].name : '';
 
     return (

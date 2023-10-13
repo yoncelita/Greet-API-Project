@@ -1,16 +1,17 @@
 import './App.css';
 import { Header } from './components/Header/Header';
 import { Card } from './components/Card/Card';
-import { SortDropdown } from './components/Dropdowns/Dropdowns';
 import { CustomInfiniteScroll } from './components/InfiniteScroll/InfiniteScroll';
 import React, { useEffect, useState } from 'react';
 
 function App() {
+
   const [data, setData] = useState([]);
-  const [sortBy, setSortBy] = useState('name');
+  const [sortBy, setSortBy] = useState('default');
   const perPage = 10;
 
-  const fetchData = async (page, category = '') => {
+
+  const fetchData = async (page = '') => {
     try {
       const pageNumber = parseInt(page, 10) || 1;
       const response = await fetch(`/wp-json/wc/store/products?page=${pageNumber}`);
@@ -21,7 +22,6 @@ function App() {
         return;
       }
 
-      console.log('Fetched Data:', jsonData);
 
       if (!Array.isArray(jsonData) || jsonData.length === 0) {
         console.warn('No data received.');
@@ -30,7 +30,7 @@ function App() {
 
       setData((prevData) => [...prevData, ...jsonData]);
 
-      console.log('API Response:', jsonData);
+
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -54,6 +54,7 @@ function App() {
     fetchInitialData();
   }, []);
 
+
   const handleSortChange = (sortOption) => {
     setSortBy(sortOption);
   };
@@ -73,19 +74,22 @@ function App() {
     return 0;
   });
 
+  const categories = [...new Set(data.map(item => item.categories?.[0]?.name))];
 
+  const handleCategoryChange = (selectedCategory) => {
+    console.log(`Selected category:', ${selectedCategory} \n Logic for categories must be done...`);
+  };
 
   return (
     <div className='App'>
-      <Header />
+      <Header onSortChange={handleSortChange} onCategoryChange={handleCategoryChange} categories={categories} />
+
       <main className='main-content'>
-        <div className='filter-section'>
-          <SortDropdown onSortChange={handleSortChange} />
-        </div>
         <CustomInfiniteScroll
           data={data}
           fetchData={loadMoreData}
           hasMore={true}
+          loaderText={'Зареждане на още...'}
         >
           <div className='cards-wrapper'>
             {filteredData.map((greetData, index) => (

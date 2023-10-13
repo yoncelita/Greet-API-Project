@@ -1,7 +1,8 @@
 .navbar {
-    width: 100%;
+    width: auto;
     height: 50px;
     background-color: var(--hover-color);
+    margin: 15px;
 }
 
 .logo-container {
@@ -17,6 +18,9 @@
 .container {
     height: inherit;
     background-color: var(--second-color);
+    padding: 15px;
+    display: flex;
+    gap: 30px;
 }
 
 @media (max-width: 768px) {
@@ -26,6 +30,10 @@
 
     .logo-container img {
         width: 100px;
+    }
+
+    .container {
+        justify-content: space-between;
     }
 
 }
